@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <link rel="stylesheet" href="~/ressources/styles.css">
+    <title>HN - TP LOCAL</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="image">
+            <img src="~/ressources/GroupeHN.png" alt="GroupeHN" />
+        </div>
+        <div class="text">
+            <header>
+                <h1>Formulaire TP HN Avis</h1>
+            </header>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="/Home/Index/Accueil">Accueil</a></li>
+                <li><a href="/Home/Index/Listeavis">Liste avis</a></li>
+            </ul>
+        </div>
+        <div class="table">
+            <p><strong>Informations personnelles :</strong></p>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Sexe</th>
+                    <th>
+                        <select name="sexe" id="sexe">
+                            <option value="default">Sélectionner un choix</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="autre">autre</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Code Postal</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Ville</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Adresse mail</th>
+                    <th><input type="text" /></th>
+                </tr>
+            </table>
+            <br />
+
+            <p><strong>Informations formation suivie :</strong></p>
+            <table>
+                <tr>
+                    <th>Date début formation</th>
+                    <th><input type="date" max="2021-12-31" /></th>
+                </tr>
+                <tr>
+                    <th>Formation suivie</th>
+                    <th>
+                        <select name="formation" id="formation">
+                            <option value="default">Choix formation</option>
+                            <option value="COBOL">Formation COBOL</option>
+                            <option value="objet">Formation objet</option>
+                            <option value="double">double compétence</option>
+                        </select>
+                    </th>
+                </tr>
+            </table>
+            <br />
+
+            <p><strong>Avis sur la formation :</strong></p>
+            <table>
+                <tr>
+                    <th>Formation COBOL</th>
+                    <th><input type="text" /></th>
+                </tr>
+                <tr>
+                    <th>Formation C#</th>
+                    <th><input type="text" /></th>
+                </tr>
+            </table>
+            <form action="/Home/Index/Validation" method="POST">
+                <input type="submit" value="Valider"/>
+            </form>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
