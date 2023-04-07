@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@model TPLOCAL1.Models.FormulaireModel
+
+@{
+    ViewBag.Title = "ValidationFormulaire";
+}
+
+<!DOCTYPE html>
 <html lang="fr">
 
 
@@ -15,7 +21,7 @@
         </div>
         <div class="text">
             <header>
-                <h1>Formulaire TP HN Avis</h1>
+                <h1>Page de Validation</h1>
             </header>
         </div>
     </div>
@@ -24,71 +30,73 @@
         <div class="nav">
             <ul>
                 <li><a href="/Home/Index/Accueil">Accueil</a></li>
-                <li><a href="/Home/Index/Listeavis">Liste avis</a></li>
+                <li><a href="/Home/Index/ListeAvis">Liste avis</a></li>
             </ul>
         </div>
         <div class="table">
             <p><strong>Informations personnelles :</strong></p>
-            <table>
-                <tr>
-                    <th>Nom</th>
+            @Html.BeginForm("ValidationFormulaire", "Home", FormMethod.Get)
+            {
+				<table>
+					<tr>
+						<th>Nom</th>
+						<th>@Html.DisplayNameFor(model => model.Nom)</th>
+					</tr>
+					<tr>
+						<th>Prénom</th>
+						<th>@Html.DisplayNameFor(model => model.Prenom)</th>
+					</tr>
+					<tr>
+						<th>Sexe</th>
+						<th>@Html.DisplayNameFor(model => model.Sexe)</th>
+					</tr>
+					<tr>
+						<th>Adresse</th>
+						<th>@Html.DisplayNameFor(model => model.Adresse)</th>
+					</tr>
+					<tr>
+						<th>Code Postal</th>
+						<th>@Html.DisplayNameFor(model => model.Code_postal)</th>
+					</tr>
+					<tr>
+						<th>Ville</th>
+						<th>@Html.DisplayNameFor(model => model.Ville)</th>
+					</tr>
+					<tr>
+						<th>Adresse mail</th>
+						<th>@Html.DisplayNameFor(model => model.Adresse_mail)</th>
+					</tr>
+				</table>
+				<br />
 
-                </tr>
-                <tr>
-                    <th>Prénom</th>
+				<p><strong>Informations formation suivie :</strong></p>
+				<table>
+					<tr>
+						<th>Date début formation</th>
+						<th>@Html.DisplayNameFor(model => model.Date)</th>
+					</tr>
+					<tr>
+						<th>Formation suivie</th>
+						<th>@Html.DisplayNameFor(model => model.Formation)</th>
 
-                </tr>
-                <tr>
-                    <th>Sexe</th>
-                    <th>
+						</th>
+					</tr>
+				</table>
+				<br />
 
-                    </th>
-                </tr>
-                <tr>
-                    <th>Adresse</th>
-
-                </tr>
-                <tr>
-                    <th>Code Postal</th>
-
-                </tr>
-                <tr>
-                    <th>Ville</th>
-
-                </tr>
-                <tr>
-                    <th>Adresse mail</th>
-
-                </tr>
-            </table>
-            <br />
-
-            <p><strong>Informations formation suivie :</strong></p>
-            <table>
-                <tr>
-                    <th>Date début formation</th>
-
-                </tr>
-                <tr>
-                    <th>Formation suivie</th>
-                    <th>
-
-                    </th>
-                </tr>
-            </table>
-            <br />
-
-            <p><strong>Avis sur la formation :</strong></p>
-            <table>
-                <tr>
-                    <th>Formation COBOL</th>
-
-                </tr>
-                <tr>
-                    <th>Formation C#</th>
-
-                </tr>
-            </table>
+				<p><strong>Avis sur la formation :</strong></p>
+				<table>
+					<tr>
+						<th>Formation COBOL</th>
+						<th>@Html.DisplayNameFor(model => model.Avis1)</th>
+					</tr>
+					<tr>
+						<th>Formation C#</th>
+						<th>@Html.DisplayNameFor(model => model.Avis2)</th>
+					</tr>
+				</table>
+            }
+            
 
         </div>
 
