@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 using TPLOCAL1.Models;
 
@@ -27,6 +27,8 @@ namespace TPLOCAL1.Controllers
                     case "Formulaire":
                         //reste à faire : appeler la vue Formulaire avec le modèle de données vide
                         return View(id);
+                    case "Validation":
+                        return View(id);
                     default:
                         //renvoie vers Index (voir routage dans RouteConfig.cs)
                         return View();
@@ -37,12 +39,21 @@ namespace TPLOCAL1.Controllers
 
         //méthode pour envoyer les données du formulaire vers la page de validation
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        public ActionResult ValidationFormulaire(FormulaireModel FormulaireModel)
         {
-            //reste à faire : tester de si les champs du modele sont bien remplis
-            //s'ils ne sont pas bien remplis, afficher une erreur et rester sur la page formulaire
-            //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
-            return null;
+            string Nom = FormulaireModel.Nom;
+            string Prenom = FormulaireModel.Prenom;
+            string Sexe = FormulaireModel.Sexe;
+            string Adresse = FormulaireModel.Adresse;
+            int Code_postal = FormulaireModel.Code_postal;
+            string Ville = FormulaireModel.Ville;
+            string Adresse_mail = FormulaireModel.Adresse_mail;
+            DateTime Date = FormulaireModel.Date;
+            string Formation = FormulaireModel.Formation;
+            string Avis1 = FormulaireModel.Avis1;
+            string Avis2 = FormulaireModel.Avis2;
+
+            return View();
 
         }
     }
