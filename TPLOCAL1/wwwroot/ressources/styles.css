@@ -45,7 +45,7 @@ a {
     flex-basis: 50%;
 }
 
-th{
+th {
     width: 50%;
 }
 
@@ -53,6 +53,6 @@ table, td, th {
     border: 1px solid black;
 }
 
-select{
+select {
     width: 100%
 }
