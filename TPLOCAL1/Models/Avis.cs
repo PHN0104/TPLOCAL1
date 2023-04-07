@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -77,5 +78,34 @@ namespace TPLOCAL1.Models
         /// Avis donné (Valeurs possibles : O ou N)
         /// </summary>
         public string AvisDonne { get; set; }
+    }
+
+    public class FormulaireModel
+    {
+        [Required]
+        public string Nom { get; set; }
+        [Required]
+        public string Prenom { get; set; }
+        [Required]
+        public string Sexe { get; set; }
+        [Required]
+        public string Adresse { get; set; }
+        [Required]
+        [MaxLength(5)]
+        public int Code_postal { get; set; }
+        [Required]
+        public string Ville { get; set; }
+        [Required]
+        public string Adresse_mail { get; set; }
+        [Required]
+        public DateTime Date { get; set; }
+        [Required]
+        public string Formation { get; set; }
+        [Required]
+        public string Avis1 { get; set; }
+        [Required]
+        public string Avis2 { get; set; }
+
+
     }
 }
